@@ -1,0 +1,42 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">KERO BLOG</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Ana sayfa&nbsp;&nbsp;<i class="fa fa-home"></i></a>
+      </li>       
+      <li class="nav-item active">
+        <a class="nav-link" href="/articles">Gözat&nbsp;&nbsp;<i class="fa fa-search"></i>
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+           
+      {% if session["giris"] %}
+        {% if session["id"] == 1 %}
+          <li class="nav-item">
+            <a class="nav-link" href="/H20041232">Admin</a>
+          </li>       
+        {% endif %}       
+        <li class="nav-item">  
+              
+          <a class="nav-link" href="/profile/{{session['id']}}" id = "denemes">Profil&nbsp;&nbsp;<i class="fa fa-address-card"></i></a>
+        </li>      
+        <li class="nav-item">       
+          <a class="nav-link" href="/logout" id = "deneme">Çıkış&nbsp;&nbsp;<i class="fa fa-close"></i></a>
+        </li>       
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Giriş Yap</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/register">Kayıt Ol</a>
+        </li>
+      {% endif %}
+    </ul>     
+  </div>
+</nav>

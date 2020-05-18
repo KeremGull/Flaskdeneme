@@ -1,0 +1,72 @@
+{%extends "layout.html"%}
+{% block head %}
+<style>
+a:link {color:black;}    
+a:visited {color:black;} 
+a:hover {color:black;}   
+a:active {color:black;} 
+div.absolute {
+  position: relative;
+  top: -405px;
+  left: 660px;
+  width: 200px;
+  border: 1px solid white;
+  height: 225px;
+  
+}
+#bos {
+    position: absolute;
+    top: 375px; 
+    color: #202020;
+    display: block;
+    padding: 0 15px;
+    background: #fff;
+    border: 1px solid #202020;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+</style>
+{% endblock head %}
+{% block body %} 
+
+{% for article in articles %}
+<div style="padding-left: 140px"> 
+        <h4>
+        <a href="/article/{{article.id}}" id = "bum">{{article.title}}</a>
+        </h4> 
+    </div>
+    <div>
+        <a href="/article/{{article.id}}">    
+            <img src="{{article.link}}" width="650" height="400"> 
+        </a>
+        <div class = "absolute">
+            <div id = "bos">
+                <a href="/article/{{article.id}}"><h6>Okumaya devam et&nbsp;&nbsp;<i class="fa fa-eye"></i></h6></a>
+            </div>
+        </div>
+    </div>  
+{% endfor %} 
+    
+{% endblock %}
+<div style="padding-left: 140px"> 
+        <h4>
+        <a href="/article/4" id = "bum">{{article.title}}</a>
+        </h4> 
+    </div>
+    <div>
+        <a href="/article/4">    
+            <img src="https://media-exp1.licdn.com/dms/image/C561BAQGzHl-rT6v8Fw/company-background_10000/0?e=2159024400&v=beta&t=x6kkxm0dW1vrPFObtoJu6wAeKLndeaZBRjiWxJiF6eA"width="650" height="400"> 
+        </a>
+        <div class = "absolute">
+            <p>Makaleden bir bölüm...</p>
+            <div id = "bos">
+                <a href="/article/4"><h6>Okumaya devam et&nbsp;&nbsp;<i class="fa fa-eye"></i></h6></a>
+            </div>
+        </div>
+    </div>
+<div style="padding-left: 140px"> 
+    <h4>
+    <a href="/article/4" id = "bum">Yazılım</a>
+    </h4> 
+</div>
+

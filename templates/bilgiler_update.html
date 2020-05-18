@@ -1,0 +1,15 @@
+{% extends "profile.html" %}
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+<div style="padding-left: 275px">
+    {% include "includes/message.html" %}
+</div>
+<div style="padding-left: 275px" id = "l">
+    <form method=post>
+        {{ render_field(form.name) }} 
+        {{ render_field(form.email) }}
+        {{ render_field(form.fname) }}
+        <button type="submit" class="btn btn-secondary">Kaydet</button>
+    </form>
+</div>
+{% endblock %}

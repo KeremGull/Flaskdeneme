@@ -1,0 +1,35 @@
+{% extends "profile.html" %}
+{% block body %}
+<link href="/static/css/Hesap.css" type="text/css" rel="stylesheet"/>
+<br>
+<div style="padding-left: 275px">
+    {% include "includes/message.html" %}
+</div>
+<div style="padding-left: 275px" id = "l"><h3>Hesap Bilgileri</h3></div>
+<br><br>
+<div style="padding-left: 275px">
+    <div style="padding-right: 25px">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col"><h6>İsim</h6></th>
+                    <th scope="col"><h6>Soyisim</h6></th>
+                    <th scope="col"><h6>Email</h6></th>
+                    <th scope="col"><h6>Aramıza katılma tarihiniz&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar"></i></h6></th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{user.name}}</th>
+                    <th scope="row">{{user.fname}}</th>
+                    <th scope="row">{{user.email}}</th>
+                    <th scope="row">{{user.date}}</th>               
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+<div id="viewport">  
+  <div id="sidebar">
+    <header>
+      <a>{{user.name +" "+ user.fname}}</a>
+    </header>
+    <ul class="nav">
+      <li>
+        <a href="/profile/{{session['id']}}">
+          <i class="fa fa-info-circle"></i>Hesap Bilgileri
+        </a>
+      </li>    
+      <li>
+        <a href="/profile_update/{{session['id']}}">
+          <i class="fa fa-gear"></i>Bilgiler Güncelle
+        </a>
+      </li>     
+      <li>
+        <a href="/set_password/{{session['id']}}">
+          <i class="zmdi zmdi-lock"></i>Şifre Değiştir
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
